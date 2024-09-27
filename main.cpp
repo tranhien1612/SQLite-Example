@@ -66,8 +66,11 @@ int main() {
         fprintf(stdout, "Records created successfully\n");
     }
 
-    // SQL statement to select data from the table
+    // SQL Query
     sql = "SELECT * FROM COMPANY;";
+    // sql = "SELECT * FROM COMPANY WHERE NAME = 'Paul';";
+    // sql = "SELECT * FROM COMPANY WHERE SALARY IS NULL;"; 
+    // sql = "SELECT * FROM COMPANY WHERE NAME = 'Paul' AND SALARY IS NULL;";
     
     // Execute SQL statement and display results
     rc = sqlite3_exec(db, sql, callback, 0, &errMsg);
